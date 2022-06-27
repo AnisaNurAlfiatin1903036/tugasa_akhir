@@ -47,7 +47,7 @@
                     <i class="fa fa-laptop"></i> <span>Pengajuan Kegiatan</span>
                 </a>
             </li>
-            <li class="{{ Request::is('jadwal-kegiatan*') ? 'active' : '' }}">
+            {{-- <li class="{{ Request::is('jadwal-kegiatan*') ? 'active' : '' }}">
                 <a href="/jadwal-kegiatan">
                     <i class="fa fa-edit"></i> <span>Jadwal Kegiatan</span>
                 </a>
@@ -61,6 +61,14 @@
                 <a href="/data-kegiatan">
                     <i class="fa fa-book"></i> <span>Data Kegiatan</span>
                 </a>
+            </li> --}}
+            <li class="{{ Request::is('data-kegiatan*') ? 'active' : '' }}">
+                <form action="{{route('logout')}}" method="POST">
+                    @csrf
+                    <button type="submit" class="{{ Request::is('data-kegiatan*') ? 'active' : '' }}" >
+                        <i class="fa fa-sign-out"></i> <span>Logout</span>
+                    </button>
+                </form>
             </li>
         </ul>
     </section>

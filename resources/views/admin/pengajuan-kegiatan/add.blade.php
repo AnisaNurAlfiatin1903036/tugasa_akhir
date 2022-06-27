@@ -25,24 +25,16 @@
                         <!-- /.form-group -->
                         <div class="form-group">
                             <label>Nama Anggota</label>
-                            <select class="form-control select2" name="anggota_id" style="width: 100%;">
-                                <option selected="selected" disabled>Nama Anggota</option>
-                                @foreach ($data as $item)
-                                    @if ( old('anggota_id') == $item->id )
-                                        <option value="{{ $item->id }}" selected>{{ $item->user->name }}</option>
-                                    @else
-                                        <option value="{{ $item->id }}">{{ $item->user->name }}</option>
-                                    @endif
-                                @endforeach
-                            </select>
-                            @error('anggota_id')
+                            <input type="text" name="tanggal" id="tanggal" class="form-control datepicker border px-3 @error('tanggal') is-invalid @enderror"
+                                    placeholder="Nama Anggota" autocomplete="off">
+                            @error('tanggal')
                             <p class="text-red-500 text-xs italic">{{ $message }}</p>
                             @enderror
                         </div>
                         <!-- /.form-group -->
                         <div class="form-group">
                             <label>Tanggal Kegiatan</label>
-                            <input type="text" name="tanggal" id="tanggal" class="form-control datepicker border px-3 @error('tanggal') is-invalid @enderror"
+                            <input type="date" name="tanggal" id="tanggal" class="form-control datepicker border px-3 @error('tanggal') is-invalid @enderror"
                                     placeholder="Tanggal Kegiatan">
                             @error('tanggal')
                             <p class="text-red-500 text-xs italic">{{ $message }}</p>
@@ -78,9 +70,18 @@
                     <div class="col-md-4">
                         <div class="form-group">
                             <label>Provinsi</label>
-                            <input type="text" name="provinsi" required value="{{ old('provinsi') }}"
-                                class="form-control @error('provinsi') is-invalid @enderror" placeholder="Provinsi">
-                            @error('provinsi')
+                            <select class="form-control select2" name="anggota_id" style="width: 100%;">
+                                <option selected="selected" disabled>Provinsi</option>
+                                <option value="#" selected>Jawa Barat</option>
+                                {{-- @foreach ($data as $item)
+                                    @if ( old('anggota_id') == $item->id )
+                                        <option value="{{ $item->id }}" selected>{{ $item->user->name }}</option>
+                                    @else
+                                        <option value="{{ $item->id }}">{{ $item->user->name }}</option>
+                                    @endif
+                                @endforeach --}}
+                            </select>
+                            @error('anggota_id')
                             <p class="text-red-500 text-xs italic">{{ $message }}</p>
                             @enderror
                         </div>
