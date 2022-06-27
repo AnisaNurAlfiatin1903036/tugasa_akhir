@@ -13,7 +13,7 @@
             <span class="sr-only">Toggle navigation</span>
         </a>
 
-        <div class="navbar-custom-menu">
+        {{-- <div class="navbar-custom-menu">
             <ul class="nav navbar-nav">
                 <!-- Messages: style can be found in dropdown.less-->
                 <li class="dropdown messages-menu">
@@ -280,6 +280,6 @@
                     <a href="#" data-toggle="control-sidebar"><i class="fa fa-gears"></i></a>
                 </li>
             </ul>
-        </div>
+        </div> --}}
     </nav>
 </header>
